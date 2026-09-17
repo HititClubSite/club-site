@@ -1,5 +1,5 @@
 const feed=document.querySelector('#security-feed');
-const events=['TLS el sıkışması doğrulandı','Ziyaretçi oturumu anonimleştirildi','Güvenlik başlıkları kontrol edildi','İstek hızı normal aralıkta','İstemci bağlantısı güvenli'];
+const events=['TLS el sıkışması doğrulandı','Ziyaretçi oturumu anonimleştirildi','Güvenlik başlıkları kontrol edildi','İstek hızı normal aralıkta','İstemci bağlantısı güvenli','Şüpheli trafik engellendi','Anonim olay kaydedildi'];
 function renderFeed(){feed.innerHTML=events.map((e,i)=>`<div class="feed-row"><b><span class="green">✓</span> ${e}</b><span>${String(i+1).padStart(2,'0')}s önce</span></div>`).join('')}
 renderFeed();
 setInterval(()=>{document.querySelector('#event-count').textContent=128+Math.floor(Math.random()*8);renderFeed()},5000);
