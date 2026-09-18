@@ -1,4 +1,8 @@
 const feed=document.querySelector('#security-feed');
+const matrix=document.querySelector('#matrix-log');
+const matrixEvents=['[OK] encrypted channel verified','[INFO] visitor session anonymized','[SCAN] firewall rules loaded','[PASS] TLS handshake complete','[TRACE] packet route secured','[WATCH] monitoring active','[OK] no anomalous traffic'];
+function streamLog(){const line=`${new Date().toLocaleTimeString()}  ${matrixEvents[Math.floor(Math.random()*matrixEvents.length)]}\n`;matrix.textContent=(line+matrix.textContent).slice(0,4200)}
+for(let i=0;i<18;i++)streamLog();setInterval(streamLog,650);
 const events=['TLS el sıkışması doğrulandı','Ziyaretçi oturumu anonimleştirildi','Güvenlik başlıkları kontrol edildi','İstek hızı normal aralıkta','İstemci bağlantısı güvenli','Şüpheli trafik engellendi','Anonim olay kaydedildi'];
 function renderFeed(){feed.innerHTML=events.map((e,i)=>`<div class="feed-row"><b><span class="green">✓</span> ${e}</b><span>${String(i+1).padStart(2,'0')}s önce</span></div>`).join('')}
 renderFeed();
