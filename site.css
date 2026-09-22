@@ -4,3 +4,4 @@
 .actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}.button.secondary{background:transparent;color:#39ff78;border:1px solid #39ff78}
 main{transform:translateY(-7vh)}@media (max-width:600px){main{transform:translateY(-4vh)}}
 main{transform:translateY(-15vh)}@media (max-width:600px){main{transform:translateY(-10vh)}}
+main{transform:translateY(-10vh)}@media (max-width:600px){main{transform:translateY(-7vh)}}
