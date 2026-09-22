@@ -7,3 +7,5 @@ const settings={logo:'/logo.png',whatsappUrl:'https://chat.whatsapp.com/C8pho8Ju
 
 
 document.querySelector('.eyebrow').textContent='[+] Ba\u011Flant\u0131 tespit edildi';
+
+document.documentElement.style.scrollBehavior='smooth';fetch('/api/site').then(r=>r.json()).then(s=>{if(s.events){document.querySelector('#event-list').innerHTML=s.events.map(e=>'<article class=event-card><small>'+e.date+'</small><h3>'+e.title+'</h3><p>'+e.description+'</p></article>').join('')}}).catch(()=>{});
