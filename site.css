@@ -2,3 +2,4 @@
 .logo{width:min(260px,58vw);height:min(260px,58vw);filter:drop-shadow(0 0 24px #39ff7866)}
 .logo{width:min(340px,72vw);height:min(340px,72vw);mix-blend-mode:screen;filter:drop-shadow(0 0 28px #39ff7899)}
 .actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}.button.secondary{background:transparent;color:#39ff78;border:1px solid #39ff78}
+main{transform:translateY(-7vh)}@media (max-width:600px){main{transform:translateY(-4vh)}}
