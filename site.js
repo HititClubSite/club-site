@@ -6,3 +6,4 @@ const settings={logo:'/logo.png',whatsappUrl:'https://chat.whatsapp.com/C8pho8Ju
 
 
 
+document.querySelector('.eyebrow').textContent='[+] Ba\u011Flant\u0131 tespit edildi';
