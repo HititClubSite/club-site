@@ -6,3 +6,5 @@
 #logo{width:min(240px,48vw)}@media(max-width:700px){#logo{width:min(220px,58vw)}}
 
 #logo{width:min(360px,52vw)}@media(max-width:700px){#logo{width:min(280px,68vw)}}
+
+#logo{width:min(720px,78vw)}@media(max-width:700px){#logo{width:min(560px,86vw)}}
