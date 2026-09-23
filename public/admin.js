@@ -2,7 +2,7 @@
 
 
 
-login.onsubmit=async e=>{e.preventDefault();const r=await fetch('/api/admin/login',{method:'POST',credentials:'include',headers:{'content-type':'application/json'},body:JSON.stringify({password:new FormData(login).get('password')})});if(r.ok){document.body.classList.add('authenticated');login.hidden=true;panel.hidden=false;load()}else{error.textContent='Şifre hatalı veya secret ayarlı değil.'}};logout.onclick=async()=>{await fetch('/api/admin/logout',{method:'POST',credentials:'include'});location.reload()};const mc=document.querySelector('#matrix'),mx=mc.getContext('2d');let drops=[];function matrixSize(){mc.width=innerWidth;mc.height=innerHeight;drops=Array(Math.ceil(innerWidth/16)).fill(0)}function matrixDraw(){mx.fillStyle='rgba(0,0,0,.12)';mx.fillRect(0,0,mc.width,mc.height);mx.fillStyle='#39ff78';mx.font='14px monospace';drops.forEach((y,i)=>{mx.fillText(Math.random()>.5?'01':'{}',i*16,y*16);drops[i]=(y*16>mc.height&&Math.random()>.97)?0:y+1})}matrixSize();setInterval(matrixDraw,45);addEventListener('resize',matrixSize);
+login.onsubmit=async e=>{e.preventDefault();const r=await fetch('/api/admin/login',{method:'POST',credentials:'include',headers:{'content-type':'application/json'},body:JSON.stringify({password:new FormData(login).get('password')})});if(r.ok){document.body.classList.add('authenticated');document.querySelector('#toggle').style.display='block';login.hidden=true;panel.hidden=false;load()}else{error.textContent='Şifre hatalı veya secret ayarlı değil.'}};logout.onclick=async()=>{await fetch('/api/admin/logout',{method:'POST',credentials:'include'});location.reload()};const mc=document.querySelector('#matrix'),mx=mc.getContext('2d');let drops=[];function matrixSize(){mc.width=innerWidth;mc.height=innerHeight;drops=Array(Math.ceil(innerWidth/16)).fill(0)}function matrixDraw(){mx.fillStyle='rgba(0,0,0,.12)';mx.fillRect(0,0,mc.width,mc.height);mx.fillStyle='#39ff78';mx.font='14px monospace';drops.forEach((y,i)=>{mx.fillText(Math.random()>.5?'01':'{}',i*16,y*16);drops[i]=(y*16>mc.height&&Math.random()>.97)?0:y+1})}matrixSize();setInterval(matrixDraw,45);addEventListener('resize',matrixSize);
 
 
 
@@ -12,5 +12,6 @@ const toggleSection=(name)=>{const same=panel.className===name;panel.className=s
 
 
 const menuButton=document.querySelector('#toggle');const menuDrawer=document.querySelector('#drawer');menuButton.addEventListener('click',()=>menuDrawer.classList.toggle('open'));
+
 
 
