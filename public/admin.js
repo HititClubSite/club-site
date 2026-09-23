@@ -10,3 +10,6 @@ const toggleSection=(name)=>{const same=panel.className===name;panel.className=s
 
 
 
+
+const menuButton=document.querySelector('#toggle');const menuDrawer=document.querySelector('#drawer');menuButton.addEventListener('click',()=>menuDrawer.classList.toggle('open'));
+
