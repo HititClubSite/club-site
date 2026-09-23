@@ -12,3 +12,5 @@
 .navbar a{display:inline-block;padding:9px 15px;border:1px solid #39ff78;border-radius:4px;background:rgba(0,18,7,.82);box-shadow:0 0 8px rgba(57,255,120,.22);transition:background .2s,box-shadow .2s,transform .2s}.navbar a:hover{background:#39ff78;color:#001407;box-shadow:0 0 16px rgba(57,255,120,.7);transform:translateY(-1px)}
 
 #logo{width:min(360px,52vw)}@media(max-width:700px){#logo{width:min(280px,68vw)}}
+
+.content{text-align:center}.content h2,.content p{text-align:center}.grid article{text-align:center}.contact{justify-content:center;align-items:center;text-align:center;gap:24px}@media(max-width:700px){.contact{flex-direction:column;gap:12px}.content{margin-left:12px;margin-right:12px;padding-left:18px;padding-right:18px}.content p{overflow-wrap:anywhere}}
