@@ -9,3 +9,5 @@
 #logout{display:block}
 
 #matrix{z-index:0}#toggle,.admin-welcome,#drawer,#panel{z-index:2}.admin-welcome{position:relative}.admin-welcome form{position:relative}#panel{position:fixed;top:90px;left:50%;transform:translateX(-50%);width:min(760px,calc(100% - 36px));max-height:calc(100vh - 120px);overflow:auto;padding:24px;background:#031008f2;border:1px solid #39ff78;z-index:8}#panel[hidden]{display:none}
+
+#drawer.open{display:block!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}
