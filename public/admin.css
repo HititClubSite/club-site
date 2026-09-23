@@ -5,3 +5,5 @@
 #toggle{display:none}body.authenticated #toggle{display:block}
 
 #menuOptions{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:14px}#menuOptions button{margin:0}#panel form,#panel h2,#panel pre,#logout{display:none}#panel.show-settings form,#panel.show-admins h2:nth-of-type(1),#panel.show-admins #admins,#panel.show-visitors h2:nth-of-type(2),#panel.show-visitors #visitors,#panel.show-settings h2,#panel.show-settings pre{display:block}
+
+#logout{display:block}
