@@ -10,3 +10,5 @@
 #logo{width:min(720px,78vw)}@media(max-width:700px){#logo{width:min(560px,86vw)}}
 
 .navbar a{display:inline-block;padding:9px 15px;border:1px solid #39ff78;border-radius:4px;background:rgba(0,18,7,.82);box-shadow:0 0 8px rgba(57,255,120,.22);transition:background .2s,box-shadow .2s,transform .2s}.navbar a:hover{background:#39ff78;color:#001407;box-shadow:0 0 16px rgba(57,255,120,.7);transform:translateY(-1px)}
+
+#logo{width:min(360px,52vw)}@media(max-width:700px){#logo{width:min(280px,68vw)}}
