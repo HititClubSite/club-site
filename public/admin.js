@@ -6,5 +6,6 @@ login.onsubmit=async e=>{e.preventDefault();const r=await fetch('/api/admin/logi
 
 
 
-showSettings.onclick=()=>{panel.className='show-settings'};showAdmins.onclick=()=>{panel.className='show-admins'};showVisitors.onclick=()=>{panel.className='show-visitors'};
+const toggleSection=(name)=>{panel.className=panel.className===name?'':name};showSettings.onclick=()=>toggleSection('show-settings');showAdmins.onclick=()=>toggleSection('show-admins');showVisitors.onclick=()=>toggleSection('show-visitors');
+
 
