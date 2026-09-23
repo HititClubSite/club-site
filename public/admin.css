@@ -3,3 +3,5 @@
 .admin-welcome h1,.admin-welcome h2{display:none}body.authenticated .admin-welcome h1,body.authenticated .admin-welcome h2{display:block}#drawer{position:fixed;right:auto;left:18px;top:62px;width:min(420px,calc(100% - 36px));height:auto;max-height:calc(100vh - 80px);padding:20px;display:block;transform:translateY(-10px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}#drawer.open{right:auto;transform:translateY(0);opacity:1;pointer-events:auto}.drawer-head{margin-bottom:12px}
 
 #toggle{display:none}body.authenticated #toggle{display:block}
+
+#menuOptions{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:14px}#menuOptions button{margin:0}#panel form,#panel h2,#panel pre,#logout{display:none}#panel.show-settings form,#panel.show-admins h2:nth-of-type(1),#panel.show-admins #admins,#panel.show-visitors h2:nth-of-type(2),#panel.show-visitors #visitors,#panel.show-settings h2,#panel.show-settings pre{display:block}
