@@ -2,3 +2,5 @@
 .logo{width:min(190px,42vw)}.hero{padding-top:88px;padding-bottom:45px;min-height:78vh}h1{font-size:clamp(32px,6vw,64px)}#location,#welcome{font-size:16px}.content{margin:55px auto;padding:42px 24px}@media(max-width:700px){.logo{width:min(180px,52vw)}.hero{min-height:75vh;padding-top:82px}.content{margin:40px auto;padding:32px 18px}}
 
 #logo{width:min(190px,42vw);height:auto;display:block}@media(max-width:700px){#logo{width:min(180px,52vw)}}
+
+#logo{width:min(240px,48vw)}@media(max-width:700px){#logo{width:min(220px,58vw)}}
