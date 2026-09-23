@@ -14,7 +14,7 @@ app.get('/api/site', async c => { const settings = await read(c.env,'settings',d
 app.get('/api/visitor', async c => {
   const ip = c.req.header('CF-Connecting-IP') || 'unknown';
   let location = 'Yaklaşık konum bulunamadı';
-  try { const r=await fetch(`https://ipapi.co/${encodeURIComponent(ip)}/json/`); const d=await r.json(); location=[d.city,d.country_name].filter(Boolean).join(', ') || location; } catch {}
+  try { const r=await fetch(`https://ipwho.is/${encodeURIComponent(ip)}`); const d=await r.json(); location=[d.city,d.country].filter(Boolean).join(', ') || location; } catch {}
   const logs=await read(c.env,'logs',[]); logs.unshift({ip,location,time:new Date().toISOString()}); await write(c.env,'logs',logs.slice(0,200));
   return c.json({ip,location});
 });
@@ -25,4 +25,5 @@ app.put('/api/admin/settings',guard,async c=>{const body=await c.req.json(); con
 app.get('/api/admin/me',guard,c=>c.json({ok:true}));
 app.get('*', async c => { const response = await c.env.ASSETS.fetch(c.req.raw); const headers = new Headers(response.headers); const type = headers.get('content-type') || ''; if (type.includes('text/html') || type.includes('text/css') || type.includes('javascript')) { headers.set('content-type', type.includes('charset=') ? type : type + '; charset=UTF-8'); } return new Response(response.body, { status: response.status, statusText: response.statusText, headers }); });
 export default app;
+
 
