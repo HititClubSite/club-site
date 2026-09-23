@@ -22,8 +22,6 @@ app.post('/api/admin/logout', c => { deleteCookie(c,'cyber_admin',{path:'/'}); r
 app.get('/api/admin/logs',guard,async c=>c.json({visitors:await read(c.env,'logs',[]),admins:await read(c.env,'adminLogs',[])}));
 app.put('/api/admin/settings',guard,async c=>{const body=await c.req.json(); const settings={...defaults,...body,events:Array.isArray(body.events)?body.events:[]}; await write(c.env,'settings',settings); return c.json(settings);});
 app.get('/api/admin/me',guard,c=>c.json({ok:true}));
-app.get('*', async c => { const response = await c.env.ASSETS.fetch(c.req.raw); const headers = new Headers(response.headers); const type = headers.get('content-type') || ''; if (type.includes('text/html') || type.includes('text/css') || type.includes('javascript')) { headers.set('content-type', type.includes('charset=') ? type : ${type}; charset=UTF-8); } return new Response(response.body, { status: response.status, statusText: response.statusText, headers }); });
+app.get('*', async c => { const response = await c.env.ASSETS.fetch(c.req.raw); const headers = new Headers(response.headers); const type = headers.get('content-type') || ''; if (type.includes('text/html') || type.includes('text/css') || type.includes('javascript')) { headers.set('content-type', type.includes('charset=') ? type : type + '; charset=UTF-8'); } return new Response(response.body, { status: response.status, statusText: response.statusText, headers }); });
 export default app;
-
-
 
