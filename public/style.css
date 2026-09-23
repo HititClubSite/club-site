@@ -4,3 +4,5 @@
 #logo{width:min(190px,42vw);height:auto;display:block}@media(max-width:700px){#logo{width:min(180px,52vw)}}
 
 #logo{width:min(240px,48vw)}@media(max-width:700px){#logo{width:min(220px,58vw)}}
+
+#logo{width:min(360px,52vw)}@media(max-width:700px){#logo{width:min(280px,68vw)}}
