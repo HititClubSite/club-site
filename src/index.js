@@ -4,12 +4,13 @@ import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 const app = new Hono();
 const defaults = { logo:'/logo.png', whatsappUrl:'#', universityUrl:'#', welcomeTemplate:'Bağlantı tespit edildi... {location} koordinatlarına sızılıyor.', about:'Hitit Üniversitesi Siber Güvenlik Kulübü olarak vizyonumuz; siber güvenlik alanında kendini geliştirmek isteyen yetenekleri bir araya getirmek, CTF laboratuvar çalışmaları ve pratik eğitimlerle teknik kapasiteyi artırmaktır. Amacımız, siber dünyada defansif ve ofansif yeteneklerle donatılmış, farkındalığı yüksek bir kültür oluşturmaktır.',contactEmail:'hitucyber@gmail.com',contactPhone:'05468466738',events:[] };
 const read = async (env,key,fallback) => (await env.CYBER_DATA.get(key,'json')) || fallback;
+const repairText = (value) => typeof value === 'string' ? value.replaceAll('BaÄŸlantÄ±','Bağlantı').replaceAll('sÄ±zÄ±lÄ±yor','sızılıyor').replaceAll('koordinatlarÄ±na','koordinatlarına').replaceAll('YaklaÅŸÄ±k','Yaklaşık').replaceAll('bulunamadÄ±','bulunamadı') : value;
 const write = (env,key,value) => env.CYBER_DATA.put(key, JSON.stringify(value));
 const isAdmin = (c) => getCookie(c,'cyber_admin') === '1';
 const guard = async (c,next) => isAdmin(c) ? next() : c.json({error:'Yetkisiz'},401);
 
 app.use('/api/*', async (c,next)=>{ c.header('Content-Type','application/json; charset=UTF-8'); await next(); });
-app.get('/api/site', async c => c.json(await read(c.env,'settings',defaults)));
+app.get('/api/site', async c => { const settings = await read(c.env,'settings',defaults); return c.json({...settings, welcomeTemplate: repairText(settings.welcomeTemplate), about: repairText(settings.about)}); });
 app.get('/api/visitor', async c => {
   const ip = c.req.header('CF-Connecting-IP') || 'unknown';
   let location = 'Yaklaşık konum bulunamadı';
