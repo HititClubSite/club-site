@@ -24,3 +24,5 @@
 #eventsList{display:flex;flex-direction:column;gap:28px;width:100%}.event-card{width:100%;max-width:none;box-sizing:border-box}.event-info h3{overflow-wrap:normal;word-break:normal}.event-info p{overflow-wrap:normal;word-break:normal}@media(max-width:700px){#eventsList{display:flex}.event-card{width:100%}}
 
 @media(max-width:700px){.hero{min-height:100svh;min-height:100vh;padding-bottom:70px}.content{scroll-margin-top:70px}}
+
+#instagram{background:#39ff78;color:#001407;border:1px solid #39ff78;padding:16px 24px;font-weight:bold;display:inline-block}
