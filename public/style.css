@@ -26,3 +26,5 @@
 @media(max-width:700px){.hero{min-height:100svh;min-height:100vh;padding-bottom:70px}.content{scroll-margin-top:70px}}
 
 #instagram{background:#39ff78;color:#001407;border:1px solid #39ff78;padding:16px 24px;font-weight:bold;display:inline-block}
+
+#join,#instagram{width:220px;height:56px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;padding:0}@media(max-width:700px){#join,#instagram{width:min(100%,280px)}}
