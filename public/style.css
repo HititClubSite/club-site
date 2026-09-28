@@ -30,3 +30,5 @@
 #join,#instagram{width:220px;height:56px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;padding:0}@media(max-width:700px){#join,#instagram{width:min(100%,280px)}}
 
 #aboutText{white-space:pre-line}
+
+.event-gallery{overflow:visible;padding:0 28px}.event-gallery button.gallery-prev,.event-gallery button.gallery-next{background:transparent;border:0;box-shadow:none;opacity:.45;color:#39ff78;font-size:42px;width:34px;height:56px;transition:opacity .2s;text-shadow:0 0 8px #39ff78}.event-gallery button.gallery-prev{left:-10px}.event-gallery button.gallery-next{right:-10px}.event-gallery button.gallery-prev:hover,.event-gallery button.gallery-next:hover{opacity:.9;background:transparent}@media(max-width:700px){.event-gallery button.gallery-prev{left:-2px}.event-gallery button.gallery-next{right:-2px}}
