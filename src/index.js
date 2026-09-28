@@ -2,7 +2,7 @@
 import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 
 const app = new Hono();
-const defaults = { logo:'/logo.png', whatsappUrl:'#', universityUrl:'#', welcomeTemplate:'Bağlantı tespit edildi... {location} koordinatlarına sızılıyor.', about:'Hitit Üniversitesi Siber Güvenlik Kulübü olarak vizyonumuz; siber güvenlik alanında kendini geliştirmek isteyen yetenekleri bir araya getirmek, CTF laboratuvar çalışmaları ve pratik eğitimlerle teknik kapasiteyi artırmaktır. Amacımız, siber dünyada defansif ve ofansif yeteneklerle donatılmış, farkındalığı yüksek bir kültür oluşturmaktır.',contactEmail:'hitucyber@gmail.com',contactPhone:'05468466738',events:[] };
+const defaults = { logo:'/logo.png', whatsappUrl:'#', universityUrl:'#', instagramUrl:'https://www.instagram.com/hitucyberclub?stkn=MWxjMXoxOWVmN2dueA==', welcomeTemplate:'Bağlantı tespit edildi... {location} koordinatlarına sızılıyor.', about:'Hitit Üniversitesi Siber Güvenlik Kulübü olarak vizyonumuz; siber güvenlik alanında kendini geliştirmek isteyen yetenekleri bir araya getirmek, CTF laboratuvar çalışmaları ve pratik eğitimlerle teknik kapasiteyi artırmaktır. Amacımız, siber dünyada defansif ve ofansif yeteneklerle donatılmış, farkındalığı yüksek bir kültür oluşturmaktır.',contactEmail:'hitucyber@gmail.com',contactPhone:'05468466738',events:[] };
 const read = async (env,key,fallback) => (await env.CYBER_DATA.get(key,'json')) || fallback;
 const repairText = (value) => typeof value === 'string' ? value.replaceAll('BaÄŸlantÄ±','Bağlantı').replaceAll('sÄ±zÄ±lÄ±yor','sızılıyor').replaceAll('koordinatlarÄ±na','koordinatlarına').replaceAll('YaklaÅŸÄ±k','Yaklaşık').replaceAll('bulunamadÄ±','bulunamadı') : value;
 const write = (env,key,value) => env.CYBER_DATA.put(key, JSON.stringify(value));
@@ -25,5 +25,6 @@ app.put('/api/admin/settings',guard,async c=>{const body=await c.req.json(); con
 app.get('/api/admin/me',guard,c=>c.json({ok:true}));
 app.get('*', async c => { const response = await c.env.ASSETS.fetch(c.req.raw); const headers = new Headers(response.headers); const type = headers.get('content-type') || ''; if (type.includes('text/html') || type.includes('text/css') || type.includes('javascript')) { headers.set('content-type', type.includes('charset=') ? type : type + '; charset=UTF-8'); } return new Response(response.body, { status: response.status, statusText: response.statusText, headers }); });
 export default app;
+
 
 
